@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RootDir name="test">
+  <File>filetest.txt</File>
+  <Dir name="testdir">
+    <Dir name="testfolder" />
+  </Dir>
+</RootDir>
