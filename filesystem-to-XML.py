@@ -30,15 +30,16 @@ def addFilesToTree(parent: ET.Element, dir_target: str) -> ET.Element:
 def main():
     # help text written according to this guide:
     # https://stackoverflow.com/a/9727046/16495502
-    help_text = """This program creates an XML file containing the directory structure of the\
-directory passed. If no directory is passed, the current directory is assumed to be\
-the target. Files are given the 'file' tag, while directories are given the\
+    help_text = """This program creates an XML file containing the directory structure of the \
+directory passed. If no directory is passed, the current directory is assumed to be \
+the target. Files are given the 'file' tag, while directories are given the \
 'directory' tag.
 
 Usage: """ + os.path.basename(sys.argv[0]) + """ [options] directory_to_target
     Options:
         [-o | --output] outputfile: sets the name of the XML file to be outputted. By default, the name of directory to scan.
-        [-d | --dirs-only]: makes it scan directories only. False by default """
+        [-d | --dirs-only]: makes it scan directories only. False by default
+        [-h | --help]: Print help information"""
     # getopt returns the opts and args as lists.
     # "dho:" means short options are -d, -h and -o where -o takes an argument (':')
     # longopts are obvious.
@@ -47,7 +48,7 @@ Usage: """ + os.path.basename(sys.argv[0]) + """ [options] directory_to_target
     if len(sys.argv) < 2:
         print(help_text)
         exit(0)
-    
+
     opts, args = getopt.getopt(sys.argv[1:], "dho:", ["help", "output=", "dirs-only"])
     for option, argument in opts:
         if option in ("-h", "--help"):
