@@ -47,7 +47,7 @@ def E(parent,dir_target):
 		if A.path.isfile(B):C.SubElement(D,'File').text=A.path.basename(B)
 		if A.path.isdir(B):G=C.SubElement(D,'Dir');G.set('name',A.path.basename(B));E(G,B)
 	return D
-D=A.path.expanduser(str(sys.argv[1]))
+#D=A.path.expanduser(str(sys.argv[1])) 'teeecchhniicallly unneccesary'
 B=C.Element('Root')
 E(B,D)
 F=C.ElementTree(B)
